@@ -4,14 +4,18 @@ function fire() {
 }
 
 function dateLink() {
+  const utcDate = makeYearMonthDay()
   const div = document.getElementById("dateLink")
-  div.textContent = "[project url]/api/" + makeYearMonthDay()
+  div.textContent = "[project url]/api/" + utcDate
+  div.href = `/api/${utcDate}`
 }
 dateLink()
 
 function dateInUnix() {
+  const unixDate = makeDate().unixDate
   const div = document.getElementById("dateUnix")
-  div.textContent = `[project url]/api/` + makeDate().unixDate
+  div.textContent = `[project url]/api/` + unixDate
+  div.href = `/api/${unixDate}`
 }
 dateInUnix()
 
@@ -43,3 +47,17 @@ function currentDate() {
   })
 }
 currentDate()
+
+
+function getApiUtcDate() {
+  const url = window.location.href
+  console.log(url)
+  // fetch()
+}
+
+async function fetchDate() {
+  debugger
+  const res = await fetch("http://localhost:8080/api/12-12-12")
+  const date = await res.json();
+  console.log(date)
+}

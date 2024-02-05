@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1 class="heading" onclick="(()=>fire())()">Timestamp Microservice</h1>
+    <h1 class="heading">Timestamp Microservice</h1>
     <div class="divider mx-5"></div>
 
     <h2>Example Usage:</h2>
     <ul>
-      <li>
-        <a href="" id="dateLink"></a>
+      <li onclick="fetchDate()">
+        <a href="" id="dateLink" onclick=""></a>
       </li>
       <li>
         <a href="" id="dateUnix"></a>
@@ -22,6 +22,10 @@
 
     <h2>Example Output:</h2>
     <div id="current-date"></div>
+
+    <div class="freecode-camp">
+      By <a href="https://www.freecodecamp.org/">freecodecamp.org</a>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
